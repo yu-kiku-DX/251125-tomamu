@@ -64,4 +64,296 @@
       background: linear-gradient(135deg, #e5e7eb, #94a3b8);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      background-clip: text
+      background-clip: text;
+    }
+
+    .page-subtitle {
+      margin: 6px 0 0;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .back-link {
+      font-size: 12px;
+      color: var(--text-muted);
+      text-decoration: none;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.4);
+      background: rgba(15,23,42,0.9);
+      white-space: nowrap;
+    }
+    .back-link:hover {
+      border-color: #e5e7eb;
+      color: #e5e7eb;
+    }
+
+    h2 {
+      font-size: 18px;
+      margin: 0 0 8px;
+    }
+
+    .lead {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+      line-height: 1.7;
+    }
+
+    /* ===== sections ===== */
+
+    .step-title {
+      font-size: 16px;
+      font-weight: 600;
+      margin: 24px 0 8px;
+      padding-left: 12px;
+      border-left: 3px solid var(--accent);
+      letter-spacing: 0.04em;
+    }
+
+    .card {
+      background: linear-gradient(145deg, rgba(15,23,42,0.98), rgba(30,41,59,0.95));
+      border-radius: var(--radius-md);
+      padding: 18px 16px 16px;
+      border: 1px solid rgba(31,41,55,0.8);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.45), inset 0 1px 0 rgba(248,250,252,0.06);
+      font-size: 13px;
+      margin-bottom: 16px;
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 15px;
+    }
+
+    .card h4 {
+      margin: 10px 0 4px;
+      font-size: 13px;
+    }
+
+    .card p {
+      margin: 4px 0;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .card ul, .card ol {
+      margin: 6px 0 4px 18px;
+      padding: 0;
+      color: var(--text-muted);
+      line-height: 1.6;
+      font-size: 13px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 3px 9px;
+      border-radius: 999px;
+      font-size: 10px;
+      background: linear-gradient(135deg, rgba(15,23,42,0.95), rgba(30,41,59,0.9));
+      border: 1px solid rgba(55,65,81,0.9);
+      color: var(--text-muted);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    pre {
+      white-space: pre-wrap;
+      font-size: 12px;
+      font-family: "SF Mono","Consolas","Menlo",monospace;
+      color: #e5e7eb;
+      background: #020617;
+      padding: 8px;
+      border-radius: 8px;
+      border: 1px solid #1f2937;
+      margin-top: 6px;
+    }
+
+    .grid-menu {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 10px;
+    }
+
+    footer {
+      margin-top: 28px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(31,41,55,0.8);
+      font-size: 11px;
+      color: var(--text-muted);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div>
+        <div class="title-block-small">TOMAMU AI SHIFT</div>
+        <h1 class="page-title">Menu 01｜校務で使ってみる</h1>
+        <p class="page-subtitle">
+          通知表・行事・会議メモなど、「いつもの校務」をAIと一緒にアップデートしてみる時間です。
+        </p>
+      </div>
+      <a class="back-link" href="index.html">← トップに戻る</a>
+    </header>
+
+    <main>
+      <!-- STEP A -->
+      <h2 class="step-title">STEP A｜全員でやってみる校務DX</h2>
+      <p class="lead">
+        まずは「このAI研修そのもの」を材料に、教職員向けの研修案内文をAIに書かせてみます。<br>
+        手元のPCで Gemini / ChatGPT を開いて、一緒にやってみてください。
+      </p>
+
+      <div class="card">
+        <div class="tag">Demo</div>
+        <h3>DX 演示｜研修案内文をAIでつくる</h3>
+        <p>
+          すでにある <strong>企画メモ（目的・日時・内容など）</strong> を貼り付けて、<br>
+          マチコミ／紙のお知らせにも使える案内文を一気に形にします。
+        </p>
+
+        <h4>① まずはAIを開く</h4>
+        <p>Gemini か ChatGPT のどちらかを開き、「新しいチャット」を用意します。</p>
+
+        <h4>② 下のプロンプトをコピーして貼る</h4>
+        <pre>
+あなたは北海道の小学校の主幹教諭で、この生成AI研修の講師です。
+これから貼るメモをもとに、教職員向けの研修案内文を書いてください。
+
+・全体は 400〜600字 程度
+・最初に短い導入文を 1〜2 文
+・研修の「ねらい」を 箇条書きで 3 つ
+・最後に「日時・場所・持ち物」を 1 行でまとめてください。
+        </pre>
+
+        <h4>③ 企画メモをそのまま貼り付けて実行</h4>
+        <p>
+          さきほどのプロンプトの下に、研修の企画メモを丸ごと貼り付けて実行します。<br>
+          （箇条書きのままでOK。文章になっていなくても大丈夫です。）
+        </p>
+
+        <h4>④ 出てきた案内文を「自分のことば」に編集</h4>
+        <ul>
+          <li>言い回しがしっくりこないところは、どんどん書き換える。</li>
+          <li>足りない情報は「◯◯も入れて」と追い指示する。</li>
+          <li>最終的に「自分が配付してもいい」と思えたら完成。</li>
+        </ul>
+      </div>
+
+      <!-- STEP B -->
+      <h2 class="step-title">STEP B｜自分の校務に合わせた個別メニュー</h2>
+      <p class="lead">
+        次は、自分の担当している校務に近いものを1つ選んでチャレンジします。<br>
+        下の6つの中から「今日これを試したい」というものを1つ選んで、同じようにAIに相談してみてください。
+      </p>
+
+      <div class="grid-menu">
+        <div class="card">
+          <div class="tag">DX-個①</div>
+          <h3>マチコミ・学級通信のたたき台</h3>
+          <p><strong>こんなときに</strong></p>
+          <ul>
+            <li>行事や学級の様子を伝えたいが、書き始めるまでが重い。</li>
+            <li>毎回同じような文面になってしまい、バリエーションを増やしたい。</li>
+          </ul>
+          <p><strong>AIに渡す材料の例</strong></p>
+          <ul>
+            <li>行事名／日時／場所／ねらい</li>
+            <li>子どもたちの様子・エピソードを箇条書きで数個</li>
+            <li>保護者に特に伝えたい一言（例：安全面・お願い事項）</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="tag">DX-個②</div>
+          <h3>行事案内の「対象別」バージョンづくり</h3>
+          <p><strong>こんなときに</strong></p>
+          <ul>
+            <li>同じ行事を「子ども向け」「保護者向け」「職員向け」で伝え分けたい。</li>
+            <li>トーンを変えたいが、書き分ける時間がない。</li>
+          </ul>
+          <p><strong>AIに渡す材料の例</strong></p>
+          <ul>
+            <li>行事の目的・活動内容・安全面で気を付けたいこと</li>
+            <li>それぞれの対象に伝えたいキーワード（例：ワクワク／協力／準備物）</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="tag">DX-個③</div>
+          <h3>欠席・遅刻などの返信テンプレ</h3>
+          <p><strong>こんなときに</strong></p>
+          <ul>
+            <li>欠席連絡への返信を書くたびに文章を考えていて、地味に時間がかかる。</li>
+            <li>配慮のある言い回しをいくつかストックしておきたい。</li>
+          </ul>
+          <p><strong>AIに渡す材料の例</strong></p>
+          <ul>
+            <li>よくある欠席連絡のパターン（体調不良／家庭の都合 など）</li>
+            <li>学校として必ず伝えたい内容（例：無理をしないでほしい、連絡のお礼）</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="tag">DX-個④</div>
+          <h3>行事後の「お礼＋振り返り」文案</h3>
+          <p><strong>こんなときに</strong></p>
+          <ul>
+            <li>PTA行事や学校行事のあとに、感謝と子どもの成長をまとめて伝えたい。</li>
+            <li>行事の狙いと実際の子どもの姿をうまく結び付けて書きたい。</li>
+          </ul>
+          <p><strong>AIに渡す材料の例</strong></p>
+          <ul>
+            <li>行事のねらい・準備で大変だったこと</li>
+            <li>当日の子どもの様子（印象的な場面やセリフ）</li>
+            <li>保護者・地域の方への感謝ポイント</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="tag">DX-個⑤</div>
+          <h3>行事の提案文書 → 反省フォームに変換</h3>
+          <p><strong>こんなときに</strong></p>
+          <ul>
+            <li>行事の要項はあるが、事後アンケートやふり返りフォームを作る時間がない。</li>
+            <li>「ねらいの達成」「運営」「安全」など、改善に直結する観点で意見を集めたい。</li>
+          </ul>
+          <p><strong>AIに渡す材料の例</strong></p>
+          <ul>
+            <li>行事の提案文書／要項（ねらい・内容・役割分担など）</li>
+            <li>アンケートを取りたい相手（教員／保護者／子ども）</li>
+            <li>次年度に特に改善したいポイント</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="tag">DX-個⑥</div>
+          <h3>通知表所見のたたき台</h3>
+          <p><strong>こんなときに</strong></p>
+          <ul>
+            <li>メモはたくさんあるのに、所見の文章にまとめるところで手が止まる。</li>
+            <li>児童一人ひとりの良さを、限られた字数の中でバランスよく表現したい。</li>
+          </ul>
+          <p><strong>AIに渡す材料の例</strong></p>
+          <ul>
+            <li>学習面・生活面・特に伝えたいエピソードを箇条書き</li>
+            <li>その子に伝えたいメッセージのキーワード（例：ねばり強さ／やさしさ）</li>
+            <li>学校として避けたい表現・配慮したい点</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      TOMAMU AI SHIFT｜Menu 01 校務で使ってみる
+    </footer>
+  </div>
+</body>
+</html>
