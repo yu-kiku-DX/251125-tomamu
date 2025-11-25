@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>TOMAMU AI SHIFT｜ふり返りを書く</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #050816;
+      --card-bg: #111827;
+      --accent: #38bdf8;
+      --text-main: #e5e7eb;
+      --text-muted: #9ca3af;
+      --radius-md: 14px;
+    }
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Noto Sans JP", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text-main);
+      background: radial-gradient(circle at top, #111827 0%, #020617 50%, #000 100%);
+      display: flex;
+      justify-content: center;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 1120px;
+      padding: 32px 20px 40px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .title-block-small {
+      font-family: "Montserrat", system-ui, sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .page-title {
+      margin: 0;
+      font-family: "Montserrat", system-ui, sans-serif;
+      font-size: clamp(22px, 3vw, 30px);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      background: linear-gradient(135deg, #e5e7eb, #94a3b8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .page-subtitle {
+      margin: 6px 0 0;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .back-link {
+      font-size: 12px;
+      color: var(--text-muted);
+      text-decoration: none;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.4);
+      background: rgba(15,23,42,0.9);
+      white-space: nowrap;
+    }
+    .back-link:hover {
+      border-color: #e5e7eb;
+      color: #e5e7eb;
+    }
+
+    h2 {
+      font-size: 18px;
+      margin: 0 0 8px;
+    }
+
+    .step-title {
+      font-size: 16px;
+      font-weight: 600;
+      margin: 24px 0 8px;
+      padding-left: 12px;
+      border-left: 3px solid var(--accent);
+      letter-spacing: 0.04em;
+    }
+
+    .lead {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+      line-height: 1.7;
+    }
+
+    .card {
+      background: linear-gradient(145deg, rgba(15,23,42,0.98), rgba(30,41,59,0.95));
+      border-radius: var(--radius-md);
+      padding: 18px 16px 16px;
+      border: 1px solid rgba(31,41,55,0.8);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.45), inset 0 1px 0 rgba(248,250,252,0.06);
+      font-size: 13px;
+      margin-bottom: 16px;
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 15px;
+    }
+
+    .card h4 {
+      margin: 10px 0 4px;
+      font-size: 13px;
+    }
+
+    .card p {
+      margin: 4px 0;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .card ul {
+      margin: 6px 0 4px 18px;
+      padding: 0;
+      color: var(--text-muted);
+      line-height: 1.6;
+      font-size: 13px;
+    }
+
+    pre {
+      white-space: pre-wrap;
+      font-size: 12px;
+      font-family: "SF Mono","Consolas","Menlo",monospace;
+      color: #e5e7eb;
+      background: #020617;
+      padding: 8px;
+      border-radius: 8px;
+      border: 1px solid #1f2937;
+      margin-top: 6px;
+    }
+
+    footer {
+      margin-top: 28px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(31,41,55,0.8);
+      font-size: 11px;
+      color: var(--text-muted);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div>
+        <div class="title-block-small">TOMAMU AI SHIFT</div>
+        <h1 class="page-title">Menu 03｜ふり返りを書く</h1>
+        <p class="page-subtitle">
+          今日の60分を、AIと一緒にことばにしてみる時間です。<br>
+          自分の手応えと「明日からやってみたいこと」が伝わる文章を目指します。
+        </p>
+      </div>
+      <a class="back-link" href="index.html">← トップに戻る</a>
+    </header>
+
+    <main>
+      <!-- STEP A -->
+      <h2 class="step-title">STEP A｜まずは自分のメモを書く</h2>
+      <div class="card">
+        <h3>① 3つの観点でメモする</h3>
+        <p>紙でもPCでもOKです。短い言葉で構いません。</p>
+        <ul>
+          <li>① 今日わかったこと・気付いたこと</li>
+          <li>② 「これは使えそう」と思った場面・アイデア</li>
+          <li>③ 明日から試してみたいこと（できれば具体的に）</li>
+        </ul>
+        <p>例）</p>
+        <ul>
+          <li>① DXと授業づくりは同じ型で考えられると分かった。</li>
+          <li>② 通知表コメントのたたき台づくりは、明日からすぐ使えそう。</li>
+          <li>③ まずは学級通信のたたき台をAIでつくって、最後は自分の言葉で整えたい。</li>
+        </ul>
+        <p>このメモが、あとでAIに渡す「材料」になります。</p>
+      </div>
+
+      <!-- STEP B -->
+      <h2 class="step-title">STEP B｜生成AIでふり返り文に整える</h2>
+      <div class="card">
+        <h3>② メモをもとに、AIに文章化してもらう</h3>
+        <p>
+          Gemini または ChatGPT を開き、下のプロンプトを入力してから、<br>
+          自分のメモ（①〜③）をそのまま貼り付けてください。
+        </p>
+        <pre>
+役割：今日の研修を受けた小学校の先生
+材料：これから貼るメモ（今日わかったこと／使えそうと感じたこと／明日から試したいこと）
+タスク：研修のふり返り文を書く
+条件：200〜300字程度で、明日からの一歩が分かるように。かしこまりすぎず、でも記録として共有できる丁寧さで書く。
+        </pre>
+
+        <h4>③ 出てきた文章を「自分の言葉」に寄せる</h4>
+        <ul>
+          <li>「これはちょっと自分っぽくないな」という表現は、遠慮なく書き換える。</li>
+          <li>長すぎるときは「200字くらいに短くして」など、AIに再度指示する。</li>
+          <li>大事なフレーズには、自分で語尾を足したり、漢字をひらがなにしたりして「自分の声」に近づける。</li>
+        </ul>
+      </div>
+
+      <!-- STEP C -->
+      <h2 class="step-title">STEP C｜共有とクロージング</h2>
+      <div class="card">
+        <h3>④ フォームに貼り付けて共有する</h3>
+        <p>
+          整えたふり返り文を、このあと案内するフォームにコピペして提出してください。<br>
+          （名前の扱いについては、フォーム側の指示に従ってください）
+        </p>
+        <h3>⑤ 全体で見合えるような一文を意識する</h3>
+        <p>
+          あとで全体で眺めたときに、「今日の学び」と「明日からの一歩」が伝わる一文が入っていると、<br>
+          互いの実践のヒントになりやすくなります。
+        </p>
+        <ul>
+          <li>例：「通知表コメントづくりをAIに手伝ってもらい、子どもの良さをもっと言語化していきたい。」</li>
+          <li>例：「AIを“楽する道具”ではなく、質を上げる相棒として使う意識を持ち続けたい。」</li>
+        </ul>
+      </div>
+    </main>
+
+    <footer>
+      TOMAMU AI SHIFT｜Menu 03 ふり返りを書く
+    </footer>
+  </div>
+</body>
+</html>
