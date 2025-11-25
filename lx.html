@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>TOMAMU AI SHIFT｜授業づくりで使ってみる</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #050816;
+      --card-bg: #111827;
+      --accent: #38bdf8;
+      --text-main: #e5e7eb;
+      --text-muted: #9ca3af;
+      --radius-md: 14px;
+    }
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Noto Sans JP", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text-main);
+      background: radial-gradient(circle at top, #111827 0%, #020617 50%, #000 100%);
+      display: flex;
+      justify-content: center;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 1120px;
+      padding: 32px 20px 40px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .title-block-small {
+      font-family: "Montserrat", system-ui, sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .page-title {
+      margin: 0;
+      font-family: "Montserrat", system-ui, sans-serif;
+      font-size: clamp(22px, 3vw, 30px);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      background: linear-gradient(135deg, #e5e7eb, #94a3b8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .page-subtitle {
+      margin: 6px 0 0;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .back-link {
+      font-size: 12px;
+      color: var(--text-muted);
+      text-decoration: none;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.4);
+      background: rgba(15,23,42,0.9);
+      white-space: nowrap;
+    }
+    .back-link:hover {
+      border-color: #e5e7eb;
+      color: #e5e7eb;
+    }
+
+    h2 {
+      font-size: 18px;
+      margin: 0 0 8px;
+    }
+
+    .lead {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+      line-height: 1.7;
+    }
+
+    .step-title {
+      font-size: 16px;
+      font-weight: 600;
+      margin: 24px 0 8px;
+      padding-left: 12px;
+      border-left: 3px solid var(--accent);
+      letter-spacing: 0.04em;
+    }
+
+    .card {
+      background: linear-gradient(145deg, rgba(15,23,42,0.98), rgba(30,41,59,0.95));
+      border-radius: var(--radius-md);
+      padding: 18px 16px 16px;
+      border: 1px solid rgba(31,41,55,0.8);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.45), inset 0 1px 0 rgba(248,250,252,0.06);
+      font-size: 13px;
+      margin-bottom: 16px;
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 15px;
+    }
+
+    .card h4 {
+      margin: 10px 0 4px;
+      font-size: 13px;
+    }
+
+    .card p {
+      margin: 4px 0;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .card ul, .card ol {
+      margin: 6px 0 4px 18px;
+      padding: 0;
+      color: var(--text-muted);
+      line-height: 1.6;
+      font-size: 13px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 3px 9px;
+      border-radius: 999px;
+      font-size: 10px;
+      background: linear-gradient(135deg, rgba(15,23,42,0.95), rgba(30,41,59,0.9));
+      border: 1px solid rgba(55,65,81,0.9);
+      color: var(--text-muted);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    pre {
+      white-space: pre-wrap;
+      font-size: 12px;
+      font-family: "SF Mono","Consolas","Menlo",monospace;
+      color: #e5e7eb;
+      background: #020617;
+      padding: 8px;
+      border-radius: 8px;
+      border: 1px solid #1f2937;
+      margin-top: 6px;
+    }
+
+    .grid-menu {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 10px;
+    }
+
+    footer {
+      margin-top: 28px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(31,41,55,0.8);
+      font-size: 11px;
+      color: var(--text-muted);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div>
+        <div class="title-block-small">TOMAMU AI SHIFT</div>
+        <h1 class="page-title">Menu 02｜授業づくりで使ってみる</h1>
+        <p class="page-subtitle">
+          単元の骨格づくりから1時間の流れ、ふり返りまで。<br>
+          授業デザインを AI と一緒に考えてみる時間です。
+        </p>
+      </div>
+      <a class="back-link" href="index.html">← トップに戻る</a>
+    </header>
+
+    <main>
+      <!-- STEP A -->
+      <h2 class="step-title">STEP A｜全員でやってみる授業LX</h2>
+      <p class="lead">
+        まずは 1つの単元を選び、AI と一緒に「単元の骨格」をつくってみます。<br>
+        生活科・特活・総合・教科など、明日以降も使えそうな単元で試してみてください。
+      </p>
+
+      <div class="card">
+        <div class="tag">Demo</div>
+        <h3>LX 演示｜単元の骨格をAIでつくる</h3>
+        <p>
+          教科書やこれまでのメモを材料に、<br>
+          「ねらい・全体の流れ・主な活動・評価の観点」のたたき台を AI に出してもらいます。
+        </p>
+
+        <h4>① 単元を1つ選ぶ</h4>
+        <ul>
+          <li>今まさに構想したい単元</li>
+          <li>前からブラッシュアップしたかった単元</li>
+          <li>生活科／特活／総合／道徳／教科 どれでもOK</li>
+        </ul>
+
+        <h4>② 下のプロンプトをコピーまたは参考にして、AIを動かしてみる</h4>
+        <pre>
+役割：小学校の授業づくりを支援するカリキュラム・デザイナー
+材料：教科・学年・単元名／これから貼る単元メモや教科書の概要
+タスク：単元の「ねらい」「全体の流れ」「主な活動」「評価の観点」のたたき台をつくる
+条件：授業時数◯時間前後／子どもの姿や発言が浮かぶように具体的に書く
+        </pre>
+
+        <h4>③ 出てきた案を「自分の学校・学級仕様」にする</h4>
+        <ul>
+          <li>自校の用語・評価の観点に合わせて書き換える。</li>
+          <li>「これはないな」と思う活動は削る／入れ替える。</li>
+          <li>「この問いは使えそう」と思うところに〇印を付ける。</li>
+        </ul>
+      </div>
+
+      <!-- STEP B -->
+      <h2 class="step-title">STEP B｜自分の授業に合わせた個別メニュー</h2>
+      <p class="lead">
+        次は、自分の授業づくりに近いものを 1つ選んでチャレンジします。<br>
+        下の 6つの中から「今日これを試したい」というものを 1つ選び、同じように AI に相談してみてください。
+      </p>
+
+      <div class="grid-menu">
+        <!-- LX-個① -->
+        <div class="card">
+          <div class="tag">LX-個①</div>
+          <h3>単元の骨格づくり（生活科・特活・総合・教科）</h3>
+          <p><strong>こんなときに</strong></p>
+          <ul>
+            <li>新しい単元の構想をゼロから考えるのが重い。</li>
+            <li>ねらい・活動・評価のつながりを整理して眺めたい。</li>
+          </ul>
+          <p><strong>AIに渡す材料の例</strong></p>
+          <ul>
+            <li>教科・学年・単元名</li>
+            <li>学習指導要領のねらいや観点のキーワード</li>
+            <li>「子どもにこうなってほしい」というゴールのメモ</li>
+          </ul>
+        </div>
+
+        <!-- LX-個② -->
+        <div class="card">
+          <div class="tag">LX-個②</div>
+          <h3>1時間の流れと板書案をつくる</h3>
+          <p><strong>こんなときに</strong></p>
+          <ul>
+            <li>1時間の中で「導入〜展開〜まとめ」がごちゃつきやすい。</li>
+            <li>板書やスライドの流れを、子どもの思考の流れとつなげたい。</li>
+          </ul>
+          <p><strong>AIに渡す材料の例</strong></p>
+          <ul>
+            <li>単元の位置づけ（何時間目か／前時までの流れ）</li>
+            <li>この時間で育てたい力・キーワード</li>
+            <li>子どもの予想される反応・つまずき</li>
+          </ul>
+        </div>
+
+        <!-- LX-個③ -->
+        <div class="card">
+          <div class="tag">LX-個③</div>
+          <h3>探究・総合のワークシート（問い／調べる／まとめる）</h3>
+          <p><strong>こんなときに</strong></p>
+          <ul>
+            <li>子どもが「問い→調べる→まとめる」を行き来できるシートを作りたい。</li>
+            <li>活動はあるが、整理する枠組みが弱いと感じている。</li>
+          </ul>
+          <p><strong>AIに渡す材料の例</strong></p>
+          <ul>
+            <li>探究テーマ（例：川、地域、いきもの など）</li>
+            <li>子どもにさせたい活動の流れ</li>
+            <li>ふり返りで押さえたい視点（例：学び・気付き・次に試したいこと）</li>
+          </ul>
+        </div>
+
+        <!-- LX-個④ -->
+        <div class="card">
+          <div class="tag">LX-個④</div>
+          <h3>評価規準とコメントのたたき台</h3>
+          <p><strong>こんなときに</strong></p>
+          <ul>
+            <li>単元の評価観点を、子どもの具体的な姿で表したい。</li>
+            <li>子どもと共有できる「がんばりのものさし」を作りたい。</li>
+          </ul>
+          <p><strong>AIに渡す材料の例</strong></p>
+          <ul>
+            <li>観点別評価のキーワード（思考・判断・表現／主体的な学び など）</li>
+            <li>その単元で見取りたい子どもの行動・発言の例</li>
+            <li>子どもに伝えたいフィードバックのイメージ</li>
+          </ul>
+        </div>
+
+        <!-- LX-個⑤ -->
+        <div class="card">
+          <div class="tag">LX-個⑤</div>
+          <h3>子どものふり返りをブラッシュアップする</h3>
+          <p><strong>こんなときに</strong></p>
+          <ul>
+            <li>「楽しかった」「がんばった」で終わりがちなふり返りを、もう半歩深めたい。</li>
+            <li>子どものメモを尊重しつつ、読み手に伝わる文章に整えたい。</li>
+          </ul>
+          <p><strong>AIに渡す材料の例</strong></p>
+          <ul>
+            <li>子どもが実際に書いたふり返りの文章（名前は消してOK）</li>
+            <li>深めたい視点（例：理由／気付き／次にいかすこと）</li>
+            <li>「この子らしさ」は残しておきたい、というメモ</li>
+          </ul>
+        </div>
+
+        <!-- LX-個⑥ -->
+        <div class="card">
+          <div class="tag">LX-個⑥</div>
+          <h3>話し合い活動の記録から省察コメントをつくる</h3>
+          <p><strong>こんなときに</strong></p>
+          <ul>
+            <li>板書・記録はあるが、「この話し合いで何が起きたか」を文章にする時間がない。</li>
+            <li>子どもの発言の流れから、学級の変容や次の手立てを整理したい。</li>
+          </ul>
+          <p><strong>AIに渡す材料の例</strong></p>
+          <ul>
+            <li>話し合いの記録（板書の写真を文字起こししたもの／メモ）</li>
+            <li>話し合いのねらい（何を大事にした時間か）</li>
+            <li>教師として感じた変化・違和感のメモ</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      TOMAMU AI SHIFT｜Menu 02 授業づくりで使ってみる
+    </footer>
+  </div>
+</body>
+</html>
