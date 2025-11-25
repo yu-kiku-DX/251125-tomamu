@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
-  <title>TOMAMU AI SHIFT｜校務で使ってみる</title>
+  <title>TOMAMU AI SHIFT｜授業づくりで使ってみる</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="preconnect" href="https://fonts.gstatic.com" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
@@ -11,13 +11,9 @@
       --bg: #050816;
       --card-bg: #111827;
       --accent: #38bdf8;
-      --accent-soft: rgba(56,189,248,0.16);
       --text-main: #e5e7eb;
       --text-muted: #9ca3af;
-      --radius-lg: 20px;
       --radius-md: 14px;
-      --shadow-soft: 0 20px 50px rgba(0,0,0,0.5);
-      --transition-fast: 200ms ease-out;
     }
     * { box-sizing: border-box; }
 
@@ -37,7 +33,6 @@
       padding: 32px 20px 40px;
     }
 
-    /* ===== header ===== */
     header {
       display: flex;
       justify-content: space-between;
@@ -99,8 +94,6 @@
       margin-bottom: 18px;
       line-height: 1.7;
     }
-
-    /* ===== sections ===== */
 
     .step-title {
       font-size: 16px;
@@ -188,6 +181,14 @@
       color: var(--text-muted);
       text-align: center;
     }
+
+    a {
+      color: #7dd3fc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -195,9 +196,10 @@
     <header>
       <div>
         <div class="title-block-small">TOMAMU AI SHIFT</div>
-        <h1 class="page-title">Menu 01｜校務で使ってみる</h1>
+        <h1 class="page-title">Menu 02｜授業づくりで使ってみる</h1>
         <p class="page-subtitle">
-          通知表・行事・会議メモなど、「いつもの校務」をAIと一緒にアップデートしてみる時間です。
+          単元の骨格づくりから1時間の流れ、ふり返りまで。<br>
+          授業デザインを AI と一緒に考えてみる時間です。
         </p>
       </div>
       <a class="back-link" href="index.html">← トップに戻る</a>
@@ -205,145 +207,181 @@
 
     <main>
       <!-- STEP A -->
-      <h2 class="step-title">STEP A｜全員でやってみる校務DX</h2>
+      <h2 class="step-title">STEP A｜全員でやってみる授業LX</h2>
       <p class="lead">
-        まずは「このAI研修そのもの」を材料に、教職員向けの研修案内文をAIに書かせてみます。<br>
-        手元のPCで Gemini / ChatGPT を開いて、一緒にやってみてください。
+        まずは 1つの単元を選び、AI と一緒に「単元の骨格」をつくってみます。<br>
+        ここでは例として <strong>4年国語「ごんぎつね」（8時間）</strong> を取り上げますが、<br>
+        手元で別の単元で試してももちろんOKです。
       </p>
 
       <div class="card">
         <div class="tag">Demo</div>
-        <h3>DX 演示｜研修案内文をAIでつくる</h3>
+        <h3>LX 演示｜単元の骨格をAIでつくる</h3>
         <p>
-          すでにある <strong>企画メモ（目的・日時・内容など）</strong> を貼り付けて、<br>
-          マチコミ／紙のお知らせにも使える案内文を一気に形にします。
+          教科書やこれまでのメモを材料に、<br>
+          「ねらい・全体の流れ・評価の観点」のたたき台を AI に出してもらいます。
         </p>
 
-        <h4>① まずはAIを開く</h4>
-        <p>Gemini か ChatGPT のどちらかを開き、「新しいチャット」を用意します。</p>
+        <h4>① 単元を1つ選ぶ</h4>
+        <ul>
+          <li>今まさに構想したい単元</li>
+          <li>前からブラッシュアップしたかった単元</li>
+          <li>生活科／特活／総合／道徳／教科 どれでもOK</li>
+        </ul>
 
         <h4>② 下のプロンプトをコピーまたは参考にして、AIを動かしてみる</h4>
         <pre>
-役割：小学校の研修担当者
-材料：講師は菊池勇希／生成AIの活用についての体験型研修
-タスク：教職員向けの研修案内ポスターをつくる
-条件：A4用紙1枚に収まるように　　　
+役割：優秀な小学校教師
+材料：4年国語「ごんぎつね」／読むのが苦手な子が多い
+タスク：単元の「ねらい」「全体の流れ」「評価の観点」のたたき台をつくる
+条件：授業時数８時間で、読みが苦手な子も見通しを持って取り組める構成
         </pre>
 
-        <h4>③ 出てきた案内文を「自分のことば」に編集</h4>
+        <h4>③ 出てきた案を「自分の学校・学級仕様」にする</h4>
         <ul>
-          <li>言い回しがしっくりこないところは、どんどん書き換える。</li>
-          <li>足りない情報は「◯◯も入れて」と追い指示する。</li>
-          <li>最終的に「自分が配付してもいい」と思えたら完成。</li>
+          <li>自校の用語・評価の観点に合わせて書き換える。</li>
+          <li>「これはないな」と思う活動は削る／入れ替える。</li>
+          <li>「この問いは使えそう」と思うところに〇印を付ける。</li>
         </ul>
+
+        <h4>④ 国語で試してみるときの参考リンク（時間に余裕があれば）</h4>
+        <ul>
+          <li>
+            <a href="https://www.mext.go.jp/component/a_menu/education/micro_detail/__icsFiles/afieldfile/2019/03/18/1387017_002.pdf" target="_blank" rel="noreferrer">
+              学習指導要領解説（国語）
+            </a>
+          </li>
+          <li>
+            <a href="https://www.nier.go.jp/kaihatsu/pdf/hyouka/r020326_pri_kokugo.pdf" target="_blank" rel="noreferrer">
+              「指導と評価の一体化」のための学習評価に関する参考資料（国語）
+            </a>
+          </li>
+          <li>
+            <a href="https://www.kyoiku-shuppan.co.jp/textbook/shou/kokugo/files/r6kokugo4_nenkeihyouka_2404.pdf" target="_blank" rel="noreferrer">
+              教科書会社の指導計画案（4年国語）
+            </a>
+          </li>
+        </ul>
+        <p>
+          これらを開きつつ、必要な部分だけをコピーして AI に渡すと、<br>
+          実際の指導計画にかなり近い骨格が出せます。
+        </p>
       </div>
 
       <!-- STEP B -->
-      <h2 class="step-title">STEP B｜自分の校務に合わせた個別メニュー</h2>
+      <h2 class="step-title">STEP B｜自分の授業に合わせた個別メニュー</h2>
       <p class="lead">
-        次は、自分の担当している校務に近いものを1つ選んでチャレンジします。<br>
-        下の5つの中から「今日これを試したい」というものを1つ選んで、同じようにAIに相談してみてください。
+        次は、自分の授業づくりに近いものを 1つ選んでチャレンジします。<br>
+        下の 6つの中から「今日これを試したい」というものを 1つ選び、同じように AI に相談してみてください。
       </p>
 
       <div class="grid-menu">
-        <!-- DX-個① -->
+        <!-- LX-個① -->
         <div class="card">
-          <div class="tag">DX-個①</div>
-          <h3>学級通信、学校連絡メール、行事案内文書のたたき台の作成</h3>
+          <div class="tag">LX-個①</div>
+          <h3>単元の骨格づくり（生活科・特活・総合・教科）</h3>
           <p><strong>こんなときに</strong></p>
           <ul>
-            <li>学級通信や学校メールを書き始めるまでが重い。</li>
-            <li>行事案内文書を毎回ゼロから書くのが負担になっている。</li>
-            <li>昨年度の文面をベースに、今年度版にアップデートしたい。</li>
+            <li>新しい単元の構想をゼロから考えるのが重い。</li>
+            <li>ねらい・活動・評価のつながりを整理して眺めたい。</li>
           </ul>
           <p><strong>AIに渡す材料の例</strong></p>
           <ul>
-            <li>昨年度の学級通信・学校メール・行事案内の文書（テキスト or コピペ）</li>
-            <li>今年度の「変更点メモ」（日時・内容の違い／追加された配慮事項など）</li>
-            <li>今回特に強調したいポイント（例：安全面・ねらい・子どもに期待する姿）</li>
-          </ul>
-          <p>
-            ※ 昨年度の文書を一緒に貼ると、<br>
-            学校らしい言い回しや雰囲気を踏まえた案が出やすくなります。
-          </p>
-        </div>
-
-        <!-- DX-個② -->
-        <div class="card">
-          <div class="tag">DX-個②</div>
-          <h3>欠席連絡やメールの返信のたたき台の作成</h3>
-          <p><strong>こんなときに</strong></p>
-          <ul>
-            <li>欠席・遅刻・提出物の相談など、メール返信の文章を毎回考えるのが大変。</li>
-            <li>配慮のある言い回しを、いくつかストックしておきたい。</li>
-          </ul>
-          <p><strong>AIに渡す材料の例</strong></p>
-          <ul>
-            <li>よくある保護者からの連絡文の例（体調不良／家庭の都合／相談など）</li>
-            <li>学校として大事にしたいトーン（例：責めない／安心して相談できる雰囲気）</li>
-            <li>必ず添えたいメッセージ（例：無理をしないでほしい、連絡へのお礼）</li>
+            <li>教科・学年・単元名</li>
+            <li>学習指導要領のねらいや観点のキーワード</li>
+            <li>「子どもにこうなってほしい」というゴールのメモ</li>
           </ul>
         </div>
 
-        <!-- DX-個③ -->
+        <!-- LX-個② -->
         <div class="card">
-          <div class="tag">DX-個③</div>
-          <h3>通知表所見のたたき台</h3>
+          <div class="tag">LX-個②</div>
+          <h3>1時間の流れと板書案をつくる</h3>
           <p><strong>こんなときに</strong></p>
           <ul>
-            <li>メモはたくさんあるのに、所見の文章にまとめるところで手が止まる。</li>
-            <li>児童一人ひとりの良さを、限られた字数の中でバランスよく表現したい。</li>
+            <li>1時間の中で「導入〜展開〜まとめ」がごちゃつきやすい。</li>
+            <li>板書やスライドの流れを、子どもの思考の流れとつなげたい。</li>
           </ul>
           <p><strong>AIに渡す材料の例</strong></p>
           <ul>
-            <li>学習面・生活面・特に伝えたいエピソードを箇条書き</li>
-            <li>その子に伝えたいメッセージのキーワード（例：ねばり強さ／やさしさ）</li>
-            <li>学校として避けたい表現・配慮したい点</li>
+            <li>単元の位置づけ（何時間目か／前時までの流れ）</li>
+            <li>この時間で育てたい力・キーワード</li>
+            <li>子どもの予想される反応・つまずき</li>
           </ul>
         </div>
 
-        <!-- DX-個④ -->
+        <!-- LX-個③ -->
         <div class="card">
-          <div class="tag">DX-個④</div>
-          <h3>行事の提案文書 → 反省フォームに変換</h3>
+          <div class="tag">LX-個③</div>
+          <h3>探究・総合のワークシート（問い／調べる／まとめる）</h3>
           <p><strong>こんなときに</strong></p>
           <ul>
-            <li>行事の要項はあるが、事後アンケートやふり返りフォームを作る時間がない。</li>
-            <li>「ねらいの達成」「運営」「安全」など、改善に直結する観点で意見を集めたい。</li>
+            <li>子どもが「問い→調べる→まとめる」を行き来できるシートを作りたい。</li>
+            <li>活動はあるが、整理する枠組みが弱いと感じている。</li>
           </ul>
           <p><strong>AIに渡す材料の例</strong></p>
           <ul>
-            <li>行事の提案文書／要項（ねらい・内容・役割分担など）</li>
-            <li>アンケートを取りたい相手（教員／保護者／子ども）</li>
-            <li>次年度に特に改善したいポイント</li>
+            <li>探究テーマ（例：川、地域、いきもの など）</li>
+            <li>子どもにさせたい活動の流れ</li>
+            <li>ふり返りで押さえたい視点（例：学び・気付き・次に試したいこと）</li>
           </ul>
         </div>
 
-        <!-- DX-個⑤ -->
+        <!-- LX-個④ -->
         <div class="card">
-          <div class="tag">DX-個⑤</div>
-          <h3>反省フォームから次年度への改善提案を作る</h3>
+          <div class="tag">LX-個④</div>
+          <h3>評価規準とコメントのたたき台</h3>
           <p><strong>こんなときに</strong></p>
           <ul>
-            <li>Googleフォームなどで行事のふり返りは集めたが、改善案に落とし込む時間がない。</li>
-            <li>教員・保護者・子どもの声を整理して、「次年度への提案」にまとめたい。</li>
+            <li>単元の評価観点を、子どもの具体的な姿で表したい。</li>
+            <li>子どもと共有できる「がんばりのものさし」を作りたい。</li>
           </ul>
           <p><strong>AIに渡す材料の例</strong></p>
           <ul>
-            <li>反省フォームの質問項目と、主な回答の抜粋（または集計の概要）</li>
-            <li>特に改善したい観点（例：ねらいの達成度／安全面／準備の負担／役割分担）</li>
-            <li>次年度も継続したい良さ・残したい文化のメモ</li>
+            <li>観点別評価のキーワード（思考・判断・表現／主体的な学び など）</li>
+            <li>その単元で見取りたい子どもの行動・発言の例</li>
+            <li>子どもに伝えたいフィードバックのイメージ</li>
           </ul>
-          <p>
-            ※ 「結果の要約」と「次年度の具体的な改善提案」を<br>
-            それぞれ見出し付きで出してもらうように頼むと整理されやすくなります。
-          </p>
+        </div>
+
+        <!-- LX-個⑤ -->
+        <div class="card">
+          <div class="tag">LX-個⑤</div>
+          <h3>子どものふり返りをブラッシュアップする</h3>
+          <p><strong>こんなときに</strong></p>
+          <ul>
+            <li>「楽しかった」「がんばった」で終わりがちなふり返りを、もう半歩深めたい。</li>
+            <li>子どものメモを尊重しつつ、読み手に伝わる文章に整えたい。</li>
+          </ul>
+          <p><strong>AIに渡す材料の例</strong></p>
+          <ul>
+            <li>子どもが実際に書いたふり返りの文章（名前は消してOK）</li>
+            <li>深めたい視点（例：理由／気付き／次にいかすこと）</li>
+            <li>「この子らしさ」は残しておきたい、というメモ</li>
+          </ul>
+        </div>
+
+        <!-- LX-個⑥ -->
+        <div class="card">
+          <div class="tag">LX-個⑥</div>
+          <h3>話し合い活動の記録から省察コメントをつくる</h3>
+          <p><strong>こんなときに</strong></p>
+          <ul>
+            <li>板書・記録はあるが、「この話し合いで何が起きたか」を文章にする時間がない。</li>
+            <li>子どもの発言の流れから、学級の変容や次の手立てを整理したい。</li>
+          </ul>
+          <p><strong>AIに渡す材料の例</strong></p>
+          <ul>
+            <li>話し合いの記録（板書の写真を文字起こししたもの／メモ）</li>
+            <li>話し合いのねらい（何を大事にした時間か）</li>
+            <li>教師として感じた変化・違和感のメモ</li>
+          </ul>
         </div>
       </div>
     </main>
 
     <footer>
-      TOMAMU AI SHIFT｜Menu 01 校務で使ってみる
+      TOMAMU AI SHIFT｜Menu 02 授業づくりで使ってみる
     </footer>
   </div>
 </body>
