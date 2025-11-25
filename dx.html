@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>TOMAMU AI SHIFT｜校務で使ってみる</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    /* index.html と同じCSS（必要なところだけに絞ってもOK） */
+    :root {
+      --bg: #050816;
+      --card-bg: #111827;
+      --accent: #38bdf8;
+      --text-main: #e5e7eb;
+      --text-muted: #9ca3af;
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --shadow-soft: 0 20px 50px rgba(0,0,0,0.5);
+      --transition-fast: 200ms ease-out;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Noto Sans JP", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text-main);
+      background: radial-gradient(circle at top, #111827 0%, #020617 50%, #000 100%);
+      display: flex;
+      justify-content: center;
+    }
+    .page { width: 100%; max-width: 1120px; padding: 32px 20px 40px; }
+    header { display:flex; justify-content:space-between; align-items:center; gap:16px; margin-bottom:28px; }
+    .title-block h1 {
+      margin:0;
+      font-family:"Montserrat",system-ui,sans-serif;
+      font-size:clamp(22px,3vw,28px);
+      letter-spacing:0.15em;
+      text-transform:uppercase;
+      background:linear-gradient(135deg,#e5e7eb,#94a3b8);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+    .title-block p { margin:4px 0 0; font-size:13px; color:var(--text-muted); }
+    .back-link {
+      font-size:12px;
+      color:var(--text-muted);
+      text-decoration:none;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(148,163,184,0.4);
+      background:rgba(15,23,42,0.9);
+    }
+    .back-link:hover { border-color:#e5e7eb; }
+
+    h2 { font-size:18px; margin:0 0 8px; }
+    .lead { font-size:13px; color:var(--text-muted); margin-bottom:18px; }
+
+    .grid {
+      display:grid;
+      grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);
+      gap:18px;
+    }
+    @media (max-width:900px){ .grid{ grid-template-columns:minmax(0,1fr);} }
+
+    .card {
+      background:linear-gradient(145deg, rgba(15,23,42,0.98), rgba(30,41,59,0.95));
+      border-radius:var(--radius-md);
+      padding:18px 16px 16px;
+      border:1px solid rgba(31,41,55,0.8);
+      box-shadow:0 10px 30px rgba(0,0,0,0.45), inset 0 1px 0 rgba(248,250,252,0.06);
+      font-size:13px;
+    }
+    .card h3 { margin:0 0 8px; font-size:15px; }
+    .card h4 { margin:10px 0 4px; font-size:13px; }
+    .card p { margin:4px 0; color:var(--text-muted); line-height:1.6; }
+    .card ul, .card ol { margin:6px 0 4px 18px; padding:0; color:var(--text-muted); line-height:1.6; }
+
+    pre {
+      white-space:pre-wrap;
+      font-size:12px;
+      font-family:"SF Mono","Consolas","Menlo",monospace;
+      color:#e5e7eb;
+      background:#020617;
+      padding:8px;
+      border-radius:8px;
+      border:1px solid #1f2937;
+    }
+
+    footer {
+      margin-top:28px;
+      padding-top:16px;
+      border-top:1px solid rgba(31,41,55,0.8);
+      font-size:11px;
+      color:var(--text-muted);
+      text-align:center;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="title-block">
+        <h1>TOMAMU AI SHIFT</h1>
+        <p>Menu 01｜校務で使ってみる</p>
+      </div>
+      <a class="back-link" href="index.html">← トップに戻る</a>
+    </header>
+
+    <main>
+      <h2>STEP A｜全員でやってみる校務DX</h2>
+      <p class="lead">
+        まずは「このAI研修そのもの」を材料に、教職員向けの案内文をAIに作らせてみます。<br>
+        手元のPCで Gemini / ChatGPT を開いて、一緒に試してみてください。
+      </p>
+
+      <div class="card" style="margin-bottom:20px;">
+        <h3>DX 演示｜研修案内文をAIでつくる</h3>
+        <p>ざっくりした企画メモから、教職員向けの研修案内文（マチコミ・紙のお知らせ兼用）を作ります。</p>
+
+        <h4>プロンプトの例（コピペして使う）</h4>
+        <pre>
+【役割】北海道の小学校の主幹教諭で、この研修の講師になりきってください。
+【材料】次に貼る「生成AI研修のメモ」（目的・日時・対象・内容）を材料にします。
+【タスク】教職員向けの研修案内文を作ってください。
+【条件】
+・400〜600字程度
+・最初に短いリード文（1〜2文）
+・「ねらい」を箇条書きで3つ
+・最後に「日時・場所・持ち物」を1行でまとめてください。
+        </pre>
+        <p>→ このあとに、実際の企画メモをそのまま貼り付けて実行します。</p>
+      </div>
+
+      <h2>STEP B｜自分の校務に合わせた個別メニュー</h2>
+      <p class="lead">
+        次は、自分の校務に近いものを1つ選んでチャレンジ。<br>
+        下のメニューから「今日これを試したい」というものを1つ選んで、やってみてください。
+      </p>
+
+      <div class="grid">
+        <div class="card">
+          <h3>DX-個①｜マチコミ・学級通信のたたき台</h3>
+          <p>行事連絡・学級だより・緊急のお知らせなど、「とりあえずの文章」をAIに出してもらい、そこから自分で直していく使い方。</p>
+          <h4>入り口プロンプト例</h4>
+          <pre>
+【役割】○年○組の担任として、保護者にていねいに説明する先生になりきってください。
+【材料】次の箇条書きメモ（行事名・日時・ねらい・注意点など）を材料にします。
+【タスク】保護者向けの案内文の「たたき台」を作ってください。
+【条件】
+・全体で400字前後
+・保護者に不安を与えない、落ち着いたトーン
+・最後に「ご不明な点があればご相談ください。」の一文を入れてください。
+          </pre>
+
+          <h3>DX-個②｜行事案内のバリエーションづくり</h3>
+          <p>同じ内容を「子ども向け」「保護者向け」「職員向け」など、対象に応じて言い換えてもらう。</p>
+          <h4>ポイント</h4>
+          <ul>
+            <li>まずは1パターン作る → 「対象を○○向けにして書き直して」と追加指示。</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>DX-個③｜欠席・遅刻などの返信テンプレ</h3>
+          <p>保護者からの欠席連絡に対する、シンプルであたたかい返信テンプレを作ります。</p>
+          <h4>入り口プロンプト例</h4>
+          <pre>
+【役割】小学校の担任として、保護者の気持ちに寄り添う先生になりきってください。
+【材料】次に、保護者からの欠席連絡の例文をいくつか貼ります。
+【タスク】どのパターンにも使える返信テンプレートを3種類提案してください。
+【条件】
+・1通あたり80〜120字程度
+・体調を気遣う一言を必ず入れる
+・「無理をなさらず」というニュアンスを含めてください。
+          </pre>
+
+          <h3>DX-個④｜行事後の「お礼＋振り返り」文案</h3>
+          <p>行事後に出すお礼文を、「子どものがんばり」や「保護者への感謝」が伝わる形に整えてもらう。</p>
+        </div>
+
+        <div class="card">
+          <h3>DX-個⑤｜行事の提案文書 → 反省フォームに変換</h3>
+          <p>すでにある「行事の提案文書」や要項を渡して、事後のふり返りフォームを自動で設計してもらいます。</p>
+          <h4>プロンプト例</h4>
+          <pre>
+【役割】学校行事の改善をサポートする研究主任になりきってください。
+【材料】次に貼る「○○行事の提案文書・要項」を材料にします。
+【タスク】事後のふり返りフォームに入れるべき設問案を作ってください。
+【条件】
+・教員向け5〜7問、保護者向け3〜5問、子ども向け3〜5問を提案
+・選択式と記述式をバランスよく混ぜる
+・改善に直結する観点（安全・ねらいの達成・運営のしやすさなど）を含めてください。
+          </pre>
+
+          <h3>DX-個⑥｜通知表所見のたたき台</h3>
+          <p>自分のメモや評価記録を材料にして、所見のたたき台をまとめてもらう使い方。</p>
+          <h4>プロンプトの型</h4>
+          <pre>
+【役割】○年生の通知表所見を書く担任になりきってください。
+【材料】次に、この児童の様子を箇条書きで貼ります。（学習面・生活面・特筆事項など）
+【タスク】通知表所見の「たたき台」を作ってください。
+【条件】
+・全角200〜230字程度
+・事実ベースで、本人のがんばりが伝わる表現
+・保護者と本人の両方が読んで前向きになれる文章にしてください。
+          </pre>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      TOMAMU AI SHIFT｜Menu 01 校務で使ってみる
+    </footer>
+  </div>
+</body>
+</html>
