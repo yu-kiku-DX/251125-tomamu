@@ -278,6 +278,21 @@
       transform: translateY(0);
     }
 
+    .btn-secondary {
+      background: rgba(26,35,50,0.8);
+      color: var(--text-main);
+      border-color: var(--border-emphasis);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent-tertiary);
+      background: rgba(26,35,50,0.95);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(255,217,61,0.2);
+      color: var(--accent-tertiary);
+    }
+
     /* ===== footer ===== */
     footer {
       margin-top: 28px;
@@ -330,7 +345,7 @@
         <h3>① まずAIに「質問役」になってもらう</h3>
         <p>
           <strong>Gemini を使う場合</strong>は、下のリンクから「ふり返り質問Gem」を開いてください。  
-          すでに質問役の設定がしてあるので、そのまま対話を始められます。
+          すでに質問役の設定がしてあるので、「よろしくお願いします」と入力して対話を始めてください。
         </p>
         <p>
           <a class="inline-link" href="https://gemini.google.com/gem/1tJc0rLTITCFlCYXeIyJY8SmnG4HuLbFf?usp=sharing" target="_blank" rel="noreferrer">
@@ -347,6 +362,7 @@
 条件：
 ・1つの質問ごとに、私の回答を待ってから次の質問をする
 ・質問はシンプルな日本語で、考えやすい聞き方にする
+・質問を終えたら、私の回答をまとめて200字程度の振り返り文をまとめます。
 
 質問してほしいこと：
 1. 今日わかったこと・気付いたことは何ですか？
@@ -356,53 +372,17 @@
         <h4>② 出てきたやりとりが、そのまま「材料」になる</h4>
         <ul>
           <li>3つの質問への答えが、そのまま自分のふり返りの素材になります。</li>
-          <li>足りないと感じたら、自分から「他に聞いておいた方がいいことはある？」とAIに聞いてみてもOKです。</li>
-        </ul>
-      </div>
-
-      <!-- STEP B -->
-      <h2 class="step-title">STEP B｜メモをもとに、AIと一緒にふり返り文に整える</h2>
-      <div class="card">
-        <h3>③ 会話をまとめてもらうプロンプトを投げる</h3>
-        <p>
-          同じチャットの続きで、下のプロンプトを入力してください。<br>
-          STEP A で出した自分の答えをもとに、AIがふり返り文を提案してくれます。
-        </p>
-        <pre>
-役割：今日の研修を受けた小学校の先生
-材料：さきほどあなたが質問して引き出した、私の3つの回答
-タスク：研修のふり返り文を書く
-条件：
-・200〜300字程度
-・「今日わかったこと」「使えそうと感じたこと」「明日から試したいこと」が1回は出てくるように
-・かしこまりすぎず、でも記録として共有できる丁寧さで書く
-        </pre>
-
-        <h4>④ 出てきた文章を「自分の言葉」に寄せる</h4>
-        <ul>
           <li>「これはちょっと自分っぽくないな」という表現は、遠慮なく書き換える。</li>
-          <li>長すぎるときは「200字くらいに短くして」など、AIに再度指示してもOK。</li>
-          <li>大事だと思うフレーズには、自分で語尾を足したり、漢字をひらがなにしたりして「自分の声」に近づける。</li>
         </ul>
       </div>
 
       <!-- STEP C -->
-      <h2 class="step-title">STEP C｜共有とクロージング</h2>
+      <h2 class="step-title">STEP B｜共有とクロージング</h2>
       <div class="card">
-        <h3>⑤ フォームに貼り付けて共有する</h3>
+        <h3>③ フォームに貼り付けて共有する</h3>
         <p>
-          整えたふり返り文を、このあと案内するフォームにコピペして提出してください。<br>
-          （名前の扱いについては、フォーム側の指示に従ってください）
+          整えたふり返り文を、このあと案内するフォームにコピペして提出してください。
         </p>
-        <h3>⑥ 全体で見合えるような一文を意識する</h3>
-        <p>
-          あとで全体で眺めたときに、「今日の学び」と「明日からの一歩」が伝わる一文が入っていると、<br>
-          互いの実践のヒントになりやすくなります。
-        </p>
-        <ul>
-          <li>例：「通知表コメントづくりをAIに手伝ってもらい、子どもの良さをもっと言語化していきたい。」</li>
-          <li>例：「AIを"楽する道具"ではなく、質を上げる相棒として使う意識を持ち続けたい。」</li>
-        </ul>
       </div>
 
       <!-- 共有フォーム -->
@@ -411,11 +391,18 @@
         <p class="section-text">
           AIと一緒に整えた「今日のふり返り文」を共有するフォームです。
         </p>
-        <a class="btn btn-primary"
-           href="https://docs.google.com/forms/d/e/1FAIpQLSc4sYSnWaXwvfFtoh6JiSC21LgDciVMxzeXSVKGcifvCUjnIw/viewform"
-           target="_blank" rel="noreferrer">
-          ふり返りフォームを開く
-        </a>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+          <a class="btn btn-primary"
+             href="https://docs.google.com/forms/d/e/1FAIpQLSc4sYSnWaXwvfFtoh6JiSC21LgDciVMxzeXSVKGcifvCUjnIw/viewform"
+             target="_blank" rel="noreferrer">
+            ふり返りフォームを開く
+          </a>
+          <a class="btn btn-secondary"
+             href="https://docs.google.com/spreadsheets/d/1hZdoTbfUgUAWGGC9Zv-eFeKuV5bObmapwSseky-aU_I/edit?usp=sharing"
+             target="_blank" rel="noreferrer">
+            みんなの回答
+          </a>
+        </div>
       </section>
     </main>
 
