@@ -442,6 +442,75 @@
       line-height: 1.6;
     }
 
+    /* ===== evaluation card ===== */
+    .evaluation-card {
+      background: linear-gradient(145deg, rgba(26,35,50,0.85), rgba(21,27,46,0.95));
+      border-radius: var(--radius-lg);
+      padding: 28px 26px 30px;
+      border: 2px solid var(--border-emphasis);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,217,61,0.1);
+      transition: all var(--transition-fast);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .evaluation-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, 
+        var(--accent-primary) 0%, 
+        var(--accent-secondary) 50%, 
+        var(--accent-tertiary) 100%);
+    }
+
+    .evaluation-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.6), 0 8px 32px rgba(255,217,61,0.2);
+      border-color: var(--accent-tertiary);
+    }
+
+    .evaluation-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+
+    .evaluation-title {
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      color: var(--text-main);
+      margin: 0 0 12px;
+    }
+
+    .evaluation-text {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin: 0 0 20px;
+    }
+
+    .btn-evaluation {
+      background: linear-gradient(135deg, var(--accent-tertiary), #e6c035);
+      color: #0a0e1a;
+      border-color: var(--accent-tertiary);
+      box-shadow: 0 8px 24px rgba(255,217,61,0.35), inset 0 1px 0 rgba(255,255,255,0.3);
+    }
+
+    .btn-evaluation:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(255,217,61,0.5), inset 0 1px 0 rgba(255,255,255,0.4);
+      background: linear-gradient(135deg, #ffe666, var(--accent-tertiary));
+    }
+
+    .btn-evaluation:active {
+      transform: translateY(0);
+    }
+
     footer {
       margin-top: 40px;
       padding-top: 20px;
@@ -572,6 +641,22 @@
               ふり返りへ
             </a>
           </article>
+        </div>
+      </section>
+
+      <!-- 評価アンケート -->
+      <section class="menu-section">
+        <div class="evaluation-card">
+          <div class="evaluation-content">
+            <h2 class="evaluation-title">研修の評価アンケートにご協力ください</h2>
+            <p class="evaluation-text">
+              今日の研修について、率直なご意見・ご感想をお聞かせください。<br>
+              いただいたフィードバックは、今後の研修の改善に活かしてまいります。
+            </p>
+            <a class="btn btn-evaluation" href="https://forms.gle/msw2x6vVTDqh8tBj6" target="_blank" rel="noreferrer">
+              評価アンケートに回答する
+            </a>
+          </div>
         </div>
       </section>
 
