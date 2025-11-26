@@ -317,6 +317,21 @@
       transform: translateY(0);
     }
 
+    .btn-secondary {
+      background: rgba(26,35,50,0.8);
+      color: var(--text-main);
+      border-color: var(--border-emphasis);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent-primary);
+      background: rgba(26,35,50,0.95);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(0,217,255,0.2);
+      color: var(--accent-primary);
+    }
+
     /* ===== footer ===== */
     footer {
       margin-top: 28px;
@@ -376,8 +391,7 @@
         <div class="tag">Demo</div>
         <h3>DX 演示｜研修案内文をAIでつくる</h3>
         <p>
-          すでにある <strong>企画メモ（目的・日時・内容など）</strong> を貼り付けて、<br>
-          マチコミ／紙のお知らせにも使える案内文を一気に形にします。
+          お知らせにも使える案内文を一気に形にします。
         </p>
 
         <h4>① まずはAIを開く</h4>
@@ -432,18 +446,21 @@
         <!-- DX-個② -->
         <div class="card">
           <div class="tag">DX-個②</div>
-          <h3>欠席連絡やメールの返信のたたき台の作成</h3>
+          <h3>保護者への連絡・返信メールのたたき台の作成</h3>
           <p><strong>こんなときに</strong></p>
           <ul>
-            <li>欠席・遅刻・提出物の相談など、メール返信の文章を毎回考えるのが大変。</li>
-            <li>配慮のある言い回しを、いくつかストックしておきたい。</li>
+            <li>保護者からの連絡に対して、適切な返信を素早く作りたい。</li>
+            <li>配慮のある言い回しで、しっかりとした内容の返信を送りたい。</li>
           </ul>
           <p><strong>AIに渡す材料の例</strong></p>
           <ul>
-            <li>よくある保護者からの連絡文の例（体調不良／家庭の都合／相談など）</li>
-            <li>学校として大事にしたいトーン（例：責めない／安心して相談できる雰囲気）</li>
-            <li>必ず添えたいメッセージ（例：無理をしないでほしい、連絡へのお礼）</li>
+            <li>保護者から受け取った連絡の内容（体調不良の連絡、相談事項など）</li>
+            <li>返信で伝えたい大まかな内容（例：お大事に、次回の対応、確認事項など）</li>
           </ul>
+          <p>
+            ※ 「保護者からこういう連絡が来ました。こういう内容で返信したいです」と伝えるだけで、<br>
+            配慮のある言い回しを含めた返信のたたき台をAIが提案してくれます。
+          </p>
         </div>
 
         <!-- DX-個③ -->
@@ -509,11 +526,18 @@
           今日ためしてみた校務AIワーク（DX）の成果を共有するフォームです。<br>
           「これは残しておきたい」「他の先生にも見てほしい」と思うものを、1つ選んで送信してください。
         </p>
-        <a class="btn btn-primary"
-           href="https://docs.google.com/forms/d/e/1FAIpQLSdU7AbAqbdUxfKDm_UGk2_8sNWK5hWFMqJ9bbQ_pUpblIQFNw/viewform"
-           target="_blank" rel="noreferrer">
-          DXフォームを開く
-        </a>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+          <a class="btn btn-primary"
+             href="https://docs.google.com/forms/d/e/1FAIpQLSdU7AbAqbdUxfKDm_UGk2_8sNWK5hWFMqJ9bbQ_pUpblIQFNw/viewform"
+             target="_blank" rel="noreferrer">
+            DXフォームを開く
+          </a>
+          <a class="btn btn-secondary"
+             href="https://docs.google.com/spreadsheets/d/1w2_rwg5v4wLnZRhVETyFjArZJGBbD-dlnwm3b2oREKc/edit?usp=sharing"
+             target="_blank" rel="noreferrer">
+            みんなの回答
+          </a>
+        </div>
       </section>
     </main>
 
