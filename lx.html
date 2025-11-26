@@ -330,6 +330,21 @@
       transform: translateY(0);
     }
 
+    .btn-secondary {
+      background: rgba(26,35,50,0.8);
+      color: var(--text-main);
+      border-color: var(--border-emphasis);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent-secondary);
+      background: rgba(26,35,50,0.95);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(255,107,157,0.2);
+      color: var(--accent-secondary);
+    }
+
     /* ===== footer ===== */
     footer {
       margin-top: 28px;
@@ -443,7 +458,6 @@
       <!-- STEP B -->
       <h2 class="step-title">STEP B｜自分の授業に合わせた個別メニュー</h2>
       <p class="lead">
-        次は、自分の授業づくりに近いものを 1つ選んでチャレンジします。<br>
         下の 5つの中から「今日これを試したい」というものを 1つ選び、同じように AI に相談してみてください。
       </p>
 
@@ -510,7 +524,7 @@
           </ul>
           <p><strong>AIに渡す材料の例</strong></p>
           <ul>
-            <li>子どもが実際に書いた振り返りの例（名前は消してOK）</li>
+            <li>子どもが実際に書いた振り返りの例（名前は必ず消して入れる）</li>
             <li>その時間・単元で大事にしたい視点（例：理由を書く／友達の意見を受けとめる など）</li>
             <li>先生として伝えたいメッセージの方向性</li>
           </ul>
@@ -528,10 +542,13 @@
           <p><strong>AIに渡す材料の例</strong></p>
           <ul>
             <li>授業の概要（教科・学年・単元・この時間のねらい）</li>
-            <li>板書写真の文字起こしや授業記録、子どもの主な発言</li>
+            <li>板書写真の文字起こしや、板書写真そのもの</li>
+            <li>授業記録や子どもの主な発言</li>
+            <li>子どものワークシートの記述例（複数枚あるとより良い）</li>
             <li>自分で感じている課題や「うまくいかなかったな」と思うポイント</li>
           </ul>
           <p>
+            ※ 板書写真・ワークシート写真などの画像資料を一緒に入れることで、より具体的な助言が得られます。<br>
             ※ 「良かった点」「改善点」「次時に試したい手立て」の3つでコメントしてもらうよう頼むと、<br>
             事後記録や研究ノートに転記しやすくなります。
           </p>
@@ -545,11 +562,18 @@
           単元づくり・板書案・ルーブリック・フィードバック案など、<br>
           今日AIと一緒に作ってみた「授業づくり」の成果を共有するフォームです。
         </p>
-        <a class="btn btn-primary"
-           href="https://docs.google.com/forms/d/e/1FAIpQLScgsm326JdmB0Z0k1l9mBRThQp1uRKJxUYgUn6oOtRvhvt3jA/viewform"
-           target="_blank" rel="noreferrer">
-          LXフォームを開く
-        </a>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+          <a class="btn btn-primary"
+             href="https://docs.google.com/forms/d/e/1FAIpQLScgsm326JdmB0Z0k1l9mBRThQp1uRKJxUYgUn6oOtRvhvt3jA/viewform"
+             target="_blank" rel="noreferrer">
+            LXフォームを開く
+          </a>
+          <a class="btn btn-secondary"
+             href="https://docs.google.com/spreadsheets/d/1r92zyr2S_61YB1-bu-zsOOI-oCl33TEoW7HjDyfPrck/edit?usp=sharing"
+             target="_blank" rel="noreferrer">
+            みんなの回答
+          </a>
+        </div>
       </section>
     </main>
 
